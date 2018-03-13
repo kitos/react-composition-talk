@@ -10,16 +10,21 @@ import {
   Quote,
   Slide,
   Text,
+  Image,
+  Layout,
 } from 'spectacle'
 
 import createTheme from 'spectacle/lib/themes/default'
+
+import * as reactLogo from '../assets/react-logo.png'
+import * as nikitos from '../assets/nikitos.jpg'
 
 require('normalize.css')
 
 const theme = createTheme(
   {
-    primary: 'white',
-    secondary: '#1F2022',
+    primary: '#000',
+    secondary: '#fff',
     tertiary: '#03A9FC',
     quarternary: '#CECECE',
   },
@@ -37,51 +42,36 @@ export default class Presentation extends React.Component {
         transitionDuration={500}
         theme={theme}>
         <Slide transition={['zoom']} bgColor="primary">
+          <Image src={reactLogo} />
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+            React composition
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
-          </Text>
         </Slide>
-        <Slide transition={['fade']} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>
-            Typography
-          </Heading>
-          <Heading size={1} textColor="secondary">
-            Heading 1
-          </Heading>
+        <Slide>
+          <Layout>
+            <Image src={nikitos} height={300} />
+            <Text size={2} textColor="secondary">
+              Nikita Kirsanov - Senior software engineer EPAM Systems
+            </Text>
+          </Layout>
+        </Slide>
+        <Slide>
           <Heading size={2} textColor="secondary">
-            Heading 2
-          </Heading>
-          <Heading size={3} textColor="secondary">
-            Heading 3
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            Heading 4
-          </Heading>
-          <Heading size={5} textColor="secondary">
-            Heading 5
-          </Heading>
-          <Text size={6} textColor="secondary">
-            Standard text
-          </Text>
-        </Slide>
-        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Standard List
+            Agenda
           </Heading>
           <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
+            <ListItem>What is composition?</ListItem>
+            <ListItem>High order components</ListItem>
+            <ListItem>Render props</ListItem>
           </List>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
+            <Quote>
+              If you need to write more features in a shorter time, write less
+              code.
+            </Quote>
+            <Cite>Some clever guy</Cite>
           </BlockQuote>
         </Slide>
       </Deck>

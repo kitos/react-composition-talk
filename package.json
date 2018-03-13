@@ -11,7 +11,13 @@
     "export": "spectacle-renderer --delay 3000",
     "start": "cross-env NODE_ENV=development node server.js"
   },
-  "author": "",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "jsxBracketSameLine": true
+  },
+  "author": "Nikita Kirsanov <kitos.kirsanov@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "normalize.css": "7.0.0",
@@ -40,8 +46,10 @@
     "css-loader": "^0.28.7",
     "eslint": "^4.9.0",
     "eslint-config-formidable": "^3.0.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-filenames": "^1.2.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.4.0",
     "express": "^4.16.2",
     "file-loader": "^1.1.5",
@@ -49,6 +57,7 @@
     "is-buffer": "^1.1.5",
     "markdown-loader": "^2.0.1",
     "node-libs-browser": "^2.0.0",
+    "prettier": "1.11.1",
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^3.1.1",
     "react-transform-catch-errors": "^1.0.2",

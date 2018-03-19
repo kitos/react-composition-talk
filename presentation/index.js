@@ -18,8 +18,8 @@ import {
 
 import createTheme from 'spectacle/lib/themes/default'
 
-import * as reactLogo from '../assets/react-logo.png'
-import * as nikitos from '../assets/nikitos.jpg'
+import reactLogo from '../assets/react-logo.png'
+import nikitos from '../assets/nikitos.jpg'
 
 require('normalize.css')
 

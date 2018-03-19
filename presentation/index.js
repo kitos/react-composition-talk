@@ -39,7 +39,7 @@ const theme = createTheme(
 )
 
 window.wrapperStyle = {
-  minHeight: '100%',
+  minHeight: '56vh',
   border: '1px dashed green',
   display: 'flex',
   alignItems: 'center',
@@ -143,7 +143,7 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* Recompose */}
         <Slide>
-          <Heading size={3}>
+          <Heading size={6}>
             <Link href="https://github.com/acdlite/recompose">Recompose.</Link>{' '}
             Basic
           </Heading>
@@ -154,7 +154,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide>
-          <Heading size={3}>Recompose. Relay</Heading>
+          <Heading size={6}>Recompose. Relay</Heading>
           <CodePane
             source={require('raw-loader!./recompose.2.example')}
             theme="light"
@@ -162,7 +162,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide>
-          <Heading size={3}>Recompose. We need more examples</Heading>
+          <Heading size={6}>Recompose. We need more examples</Heading>
           <CodePane
             source={require('raw-loader!./recompose.3.example')}
             theme="light"
@@ -170,15 +170,28 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide>
-          <Heading size={3}>So...</Heading>
+          <Heading size={6}>So...</Heading>
           <List>
             <ListItem>Indirection</ListItem>
             <ListItem>Naming collisions</ListItem>
             <ListItem>Static composition</ListItem>
           </List>
         </Slide>
+        {/* render props */}
         <Slide>
-          <Heading size={3}>render props</Heading>
+          <Heading size={6}>render props</Heading>
+          <ComponentPlayground
+            theme="light"
+            lang="jsx"
+            code={require('raw-loader!./render-props.1.example')}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={6}>render props</Heading>
+          <ComponentPlayground
+            theme="light"
+            code={require('raw-loader!./render-props.3.example')}
+          />
         </Slide>
         {/* Who is using render props? */}
         <Slide>
@@ -190,7 +203,7 @@ export default class Presentation extends React.Component {
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="">lots of component libraries</Link>
+              <Link href="https://github.com/paypal/downshift">downshift</Link>
             </ListItem>
             <ListItem>
               <Link href="https://medium.com/dailyjs/reacts-%EF%B8%8F-new-context-api-70c9fe01596b">
@@ -198,6 +211,14 @@ export default class Presentation extends React.Component {
               </Link>
             </ListItem>
           </List>
+        </Slide>
+        <Slide>
+          <Heading size={6}>render props. context</Heading>
+          <CodePane
+            theme="light"
+            lang="jsx"
+            source={require('raw-loader!./render-props.2.example')}
+          />
         </Slide>
         {/* Style composition */}
         <Slide>

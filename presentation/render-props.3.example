@@ -1,0 +1,36 @@
+class Media extends React.Component {
+  detect() {
+    this.setState({
+      device: window.innerWidth < 640
+        ? 'mobile'
+        : 'desktop'
+    })
+  }
+
+  componentDidMount() {
+    this.detect()
+    window.addEventListener('resize',
+      () => this.detect())
+  }
+
+  render() {
+    return this.props.children(
+      this.state && this.state.device
+    )
+  }
+}
+
+const styles = {
+  mobile: { fontSize: '40px', color: 'red' },
+  desktop: { fontSize: '20px', color: 'green'}
+}
+
+render(
+  <Media>
+    {device => (
+      <div style={styles[device]}>
+        this is {device}
+      </div>
+    )}
+  </Media>
+)

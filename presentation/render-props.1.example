@@ -1,0 +1,32 @@
+class Mouse extends React.Component {
+  mm(e) {
+    this.setState({
+      x: e.clientX,
+      y: e.clientY,
+    })
+  }
+
+  render() {
+    const mm = this.mm.bind(this)
+    const rp = this.props.children
+
+    return (
+      <div
+        style={window.wrapperStyle}
+        onMouseMove={mm}>
+        {rp(this.state || {})}
+      </div>
+    )
+  }
+}
+
+/* no collisions */
+render(
+  <Mouse>
+    {({ x, y }) => (
+      <div>
+        x: {x}, y: {y}
+      </div>
+    )}
+  </Mouse>
+)

@@ -1,0 +1,17 @@
+/* redux + react-router  */
+const enhance = compose(
+  connect(
+    state => ({ todos: state.todos }),
+    dispatch => ({
+      addTodo: (task) => dispatch({ type: 'add_todo', payload: task })
+    })
+  ),
+  withRouter,
+)
+const EnhancedComponent = enhance(BaseComponent)
+
+/* you can use them as decorators */
+@withState(/*...args*/)
+@mapProps(/*...args*/)
+@pure
+class Component extends React.Component {...}

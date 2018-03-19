@@ -14,6 +14,8 @@ import {
   Layout,
   Link,
   Appear,
+  CodePane,
+  ComponentPlayground,
 } from 'spectacle'
 
 import createTheme from 'spectacle/lib/themes/default'
@@ -35,6 +37,14 @@ const theme = createTheme(
     secondary: 'Helvetica',
   },
 )
+
+window.wrapperStyle = {
+  minHeight: '100%',
+  border: '1px dashed green',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}
 
 export default class Presentation extends React.Component {
   render() {
@@ -97,19 +107,75 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* Patterns in react */}
         <Slide>
-          <Heading size={2}>Patterns in react</Heading>
+          <Heading size={2}>Patterns/approaches in react</Heading>
+          <List>
+            <Appear>
+              <ListItem>Smart/Dumb components</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Mixins</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Higher-Order Components (HOC)</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>render props</ListItem>
+            </Appear>
+          </List>
         </Slide>
-        <Slide>
-          <Heading size={3}>Smart/Dumb components</Heading>
-        </Slide>
+        {/* Mixins */}
         <Slide>
           <Heading size={3}>Mixins</Heading>
+          <List>
+            <ListItem>ES6 classes don’t support them</ListItem>
+            <ListItem>Indirection</ListItem>
+            <ListItem>Naming collisions</ListItem>
+            <ListItem>Static composition</ListItem>
+          </List>
+        </Slide>
+        {/* HOC */}
+        <Slide>
+          <Heading size={6}>Higher-Order Components (HOC)</Heading>
+          <ComponentPlayground
+            theme="light"
+            code={require('raw-loader!./hoc.1.example')}
+          />
+        </Slide>
+        {/* Recompose */}
+        <Slide>
+          <Heading size={3}>
+            <Link href="https://github.com/acdlite/recompose">Recompose.</Link>{' '}
+            Basic
+          </Heading>
+          <CodePane
+            source={require('raw-loader!./recompose.1.example')}
+            theme="light"
+            lang="jsx"
+          />
         </Slide>
         <Slide>
-          <Heading size={3}>Higher-Order Components (HOC)</Heading>
+          <Heading size={3}>Recompose. Relay</Heading>
+          <CodePane
+            source={require('raw-loader!./recompose.2.example')}
+            theme="light"
+            lang="jsx"
+          />
         </Slide>
         <Slide>
-          <Heading size={3}>Recompose</Heading>
+          <Heading size={3}>Recompose. We need more examples</Heading>
+          <CodePane
+            source={require('raw-loader!./recompose.3.example')}
+            theme="light"
+            lang="jsx"
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>So...</Heading>
+          <List>
+            <ListItem>Indirection</ListItem>
+            <ListItem>Naming collisions</ListItem>
+            <ListItem>Static composition</ListItem>
+          </List>
         </Slide>
         <Slide>
           <Heading size={3}>render props</Heading>
@@ -145,6 +211,9 @@ export default class Presentation extends React.Component {
               <Link href="https://reactjs.org/docs/higher-order-components.html">
                 Higher-Order Components
               </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/acdlite/recompose">Recompose</Link>
             </ListItem>
             <ListItem>
               <Link href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce">

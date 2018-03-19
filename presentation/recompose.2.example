@@ -1,0 +1,20 @@
+const enhance = compose(
+  createContainer({
+    fragments: {
+      post: () => Relay.QL`
+        fragment on Post {
+          title,
+          content
+        }
+      `
+    }
+  }),
+  flattenProp('post')
+)
+
+const Post = enhance(({ title, content }) =>
+  <article>
+    <h1>{title}</h1>
+    <div>{content}</div>
+  </article>
+)

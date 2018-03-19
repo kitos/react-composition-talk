@@ -1,0 +1,26 @@
+const withMouse = Component => {
+  return class extends React.Component {
+    mm(event) {
+      this.setState({
+        x: event.clientX,
+        y: event.clientY,
+      })
+    }
+
+    render() {
+      return (
+        <div
+          style={window.wrapperStyle}
+          onMouseMove={this.mm.bind(this)}>
+          <Component {...this.props} {...this.state} />
+        </div>
+      )
+    }
+  }
+}
+
+const ShowCoords = withMouse(
+  ({ x, y }) => <div>x: {x}, y: {y}</div>
+)
+
+render(<ShowCoords />)

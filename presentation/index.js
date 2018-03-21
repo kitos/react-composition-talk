@@ -39,12 +39,14 @@ const theme = createTheme(
 )
 
 window.wrapperStyle = {
-  minHeight: '56vh',
+  minHeight: 'calc(60vh - 10px)',
   border: '1px dashed green',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
 }
+
+const codeTheme = 'dark'
 
 export default class Presentation extends React.Component {
   render() {
@@ -105,6 +107,15 @@ export default class Presentation extends React.Component {
             <ListItem>...</ListItem>
           </List>
         </Slide>
+        <Slide bgColor="secondary" textColor="primary">
+          <BlockQuote>
+            <Quote>
+              If you need to write more features in a shorter time, write less
+              code.
+            </Quote>
+            <Cite>Some clever guy</Cite>
+          </BlockQuote>
+        </Slide>
         {/* Patterns in react */}
         <Slide>
           <Heading size={2}>Patterns/approaches in react</Heading>
@@ -137,7 +148,7 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={6}>Higher-Order Components (HOC)</Heading>
           <ComponentPlayground
-            theme="light"
+            theme={codeTheme}
             code={require('raw-loader!./hoc.1.example')}
           />
         </Slide>
@@ -149,7 +160,7 @@ export default class Presentation extends React.Component {
           </Heading>
           <CodePane
             source={require('raw-loader!./recompose.1.example')}
-            theme="light"
+            theme={codeTheme}
             lang="jsx"
           />
         </Slide>
@@ -157,7 +168,7 @@ export default class Presentation extends React.Component {
           <Heading size={6}>Recompose. Relay</Heading>
           <CodePane
             source={require('raw-loader!./recompose.2.example')}
-            theme="light"
+            theme={codeTheme}
             lang="jsx"
           />
         </Slide>
@@ -165,7 +176,7 @@ export default class Presentation extends React.Component {
           <Heading size={6}>Recompose. We need more examples</Heading>
           <CodePane
             source={require('raw-loader!./recompose.3.example')}
-            theme="light"
+            theme={codeTheme}
             lang="jsx"
           />
         </Slide>
@@ -181,7 +192,7 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={6}>render props</Heading>
           <ComponentPlayground
-            theme="light"
+            theme={codeTheme}
             lang="jsx"
             code={require('raw-loader!./render-props.1.example')}
           />
@@ -189,13 +200,21 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={6}>render props</Heading>
           <ComponentPlayground
-            theme="light"
+            theme={codeTheme}
             code={require('raw-loader!./render-props.3.example')}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={6}>render props. apollo</Heading>
+          <CodePane
+            theme={codeTheme}
+            lang="jsx"
+            source={require('raw-loader!./render-props.4.example')}
           />
         </Slide>
         {/* Who is using render props? */}
         <Slide>
-          <Heading size={3}>Who is using render props?</Heading>
+          <Heading size={3}>Who else is using render props?</Heading>
           <List>
             <ListItem>
               <Link href="https://github.com/ReactTraining/react-router">
@@ -215,10 +234,24 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={6}>render props. context</Heading>
           <CodePane
-            theme="light"
+            theme={codeTheme}
             lang="jsx"
             source={require('raw-loader!./render-props.2.example')}
           />
+        </Slide>
+        <Slide>
+          <Heading size={6}>render props</Heading>
+          <List>
+            <Appear>
+              <ListItem>Clear flow!</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>No naming collisions!</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Dynamic composition!</ListItem>
+            </Appear>
+          </List>
         </Slide>
         {/* Style composition */}
         <Slide>

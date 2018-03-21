@@ -1,0 +1,18 @@
+mport { Query } from 'react-apollo';
+
+function MyComponent() {
+  return (
+    <Query query={query}>
+      {(result) => {
+        if (result.loading) {
+          return <Loading />
+        }
+        if (result.error) {
+          return <Error error={error} />
+        }
+        
+        return <h1>Hello {result.data}!</h1>
+      })
+    </Query>
+  )
+}

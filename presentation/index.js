@@ -1,5 +1,7 @@
 import React from 'react'
 import createReactClass from 'create-react-class'
+import styled from 'styled-components'
+import { Flex, Box } from 'grid-styled'
 
 import {
   BlockQuote,
@@ -24,6 +26,10 @@ import createTheme from 'spectacle/lib/themes/default'
 import AboutMe from './about-me'
 
 import reactLogo from '../assets/react-logo.png'
+import nikitos from '../assets/nikitos.jpg'
+import twitter from '../assets/twitter.svg'
+import github from '../assets/github.svg'
+import webpurple from '../assets/webpurple.svg'
 
 require('normalize.css')
 
@@ -260,7 +266,21 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* Style composition */}
         <Slide>
-          <Heading size={2}>Style composition</Heading>
+          <Heading size={6}>Style composition</Heading>
+          <ComponentPlayground
+            theme={codeTheme}
+            lang="jsx"
+            scope={{
+              styled,
+              Flex,
+              Box,
+              nikitos,
+              twitter,
+              github,
+              webpurple,
+            }}
+            code={require('raw-loader!./styles.1.example')}
+          />
         </Slide>
         {/* further reading */}
         <Slide>

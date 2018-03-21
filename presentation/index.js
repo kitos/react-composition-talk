@@ -21,8 +21,9 @@ import {
 
 import createTheme from 'spectacle/lib/themes/default'
 
+import AboutMe from './about-me'
+
 import reactLogo from '../assets/react-logo.png'
-import nikitos from '../assets/nikitos.jpg'
 
 require('normalize.css')
 
@@ -64,12 +65,7 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* nikitos */}
         <Slide>
-          <Layout>
-            <Image src={nikitos} height={300} />
-            <Text size={3} textColor="secondary">
-              Nikita Kirsanov - Senior software engineer EPAM Systems
-            </Text>
-          </Layout>
+          <AboutMe />
         </Slide>
         {/* Agenda */}
         <Slide>

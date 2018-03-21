@@ -306,6 +306,12 @@ export default class Presentation extends React.Component {
             </ListItem>
           </List>
         </Slide>
+        <Slide>
+          <Heading size={2} style={{ marginBottom: '40px' }}>
+            That's it!
+          </Heading>
+          Our telegram: <a href="https://t.me/EpamSP_JS">EpamSP_JS</a>
+        </Slide>
       </Deck>
     )
   }

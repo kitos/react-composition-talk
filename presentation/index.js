@@ -1,4 +1,5 @@
 import React from 'react'
+import createReactClass from 'create-react-class'
 
 import {
   BlockQuote,
@@ -38,13 +39,13 @@ const theme = createTheme(
   },
 )
 
-window.wrapperStyle = {
+const wrapperStyle = (window.wrapperStyle = {
   minHeight: 'calc(60vh - 10px)',
   border: '1px dashed green',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-}
+})
 
 const codeTheme = 'dark'
 
@@ -136,7 +137,15 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* Mixins */}
         <Slide>
-          <Heading size={3}>Mixins</Heading>
+          <Heading size={6}>Mixins</Heading>
+          <ComponentPlayground
+            theme={codeTheme}
+            scope={{ wrapperStyle, createReactClass }}
+            code={require('raw-loader!./mixins.1.example')}
+          />
+        </Slide>
+        <Slide>
+          <Heading size={3}>Mixins cons</Heading>
           <List>
             <ListItem>ES6 classes don’t support them</ListItem>
             <ListItem>Indirection</ListItem>

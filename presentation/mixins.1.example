@@ -1,0 +1,32 @@
+const MouseMixin = {
+  getInitialState() {
+    return { x: 0, y: 0 }
+  },
+
+  handleMouseMove(event) {
+    this.setState({
+      x: event.clientX,
+      y: event.clientY
+    })
+  }
+}
+
+const App = createReactClass({
+  mixins: [ MouseMixin ],
+  
+  render() {
+    const { x, y } = this.state
+
+    return (
+      <div
+        style={wrapperStyle}
+        onMouseMove={this.handleMouseMove}>
+        <div>
+          x: {x}, y: {y}
+        </div>
+      </div>
+    )
+  }
+})
+
+render(<App/>)

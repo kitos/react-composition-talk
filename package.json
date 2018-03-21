@@ -20,6 +20,7 @@
   "author": "Nikita Kirsanov <kitos.kirsanov@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "create-react-class": "^15.6.3",
     "normalize.css": "7.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

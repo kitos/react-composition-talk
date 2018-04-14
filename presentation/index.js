@@ -23,9 +23,9 @@ import {
 
 import createTheme from 'spectacle/lib/themes/default'
 
+import Start from './1.start'
 import AboutMe from './about-me'
 
-import reactLogo from '../assets/react-logo.png'
 import nikitos from '../assets/nikitos.jpg'
 import twitter from '../assets/twitter.svg'
 import github from '../assets/github.svg'
@@ -63,11 +63,8 @@ export default class Presentation extends React.Component {
         transition={['zoom', 'slide']}
         transitionDuration={500}
         theme={theme}>
-        <Slide>
-          <Image src={reactLogo} />
-          <Heading size={1} fit caps lineHeight={1}>
-            React composition
-          </Heading>
+        <Slide bgColor="#97cad4">
+          <Start />
         </Slide>
         {/* nikitos */}
         <Slide>

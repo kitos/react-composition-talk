@@ -1,9 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { Heading, Slide, Image, Fill, Fit } from 'spectacle'
-import { Box, Flex } from 'grid-styled'
-
-import reactLogo from '../assets/react-logo.png'
+import {Image} from 'spectacle'
+import {Box, Flex} from 'grid-styled'
 import epam from '../assets/epam-start.png'
 import bg from '../assets/start-bg.png'
 

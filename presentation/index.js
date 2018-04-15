@@ -187,20 +187,11 @@ export default class Presentation extends React.Component {
         {/* HOC */}
 
         <Slide>
-          <Heading size={3}>Higher-Order Components (HOC)</Heading>
+          <Heading size={3}>Higher-Order Components (HOC) 🤔</Heading>
           <ComponentPlayground
             theme={codeTheme}
             scope={{ Box, compose, withCounter }}
             code={require('raw-loader!./hoc.1.example')}
-          />
-        </Slide>
-
-        <Slide>
-          <Heading size={3}>HOC 😫</Heading>
-          <ComponentPlayground
-            theme={codeTheme}
-            scope={{ Box, compose, withCounter }}
-            code={require('raw-loader!./hoc.2.example')}
           />
         </Slide>
 
@@ -209,7 +200,7 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={3}>
             <Link href="https://github.com/acdlite/recompose">Recompose.</Link>{' '}
-            Basic
+            Basic 😮
           </Heading>
           <CodePane
             textSize="26px"
@@ -218,8 +209,9 @@ export default class Presentation extends React.Component {
             lang="jsx"
           />
         </Slide>
+
         <Slide>
-          <Heading size={3}>Recompose. Relay</Heading>
+          <Heading size={3}>Recompose. Relay 😯</Heading>
           <Flex alignContent="center">
             <Box flex={3}>
               <CodePane
@@ -239,8 +231,9 @@ export default class Presentation extends React.Component {
             </Box>
           </Flex>
         </Slide>
+
         <Slide>
-          <Heading size={3}>Recompose. We need more examples</Heading>
+          <Heading size={3}>Recompose. We need more examples 😲</Heading>
           <CodePane
             textSize="24px"
             source={require('raw-loader!./recompose.3.example')}
@@ -248,12 +241,23 @@ export default class Presentation extends React.Component {
             lang="jsx"
           />
         </Slide>
+
+        <Slide>
+          <Heading size={3}>HOC 😫</Heading>
+          <ComponentPlayground
+            theme={codeTheme}
+            scope={{ Box, compose, withCounter }}
+            code={require('raw-loader!./hoc.2.example')}
+          />
+        </Slide>
+
         <Slide>
           <Heading size={3}>So...</Heading>
           <List>
             <ListItem>Indirection</ListItem>
             <ListItem>Naming collisions</ListItem>
             <ListItem>Static composition</ListItem>
+            <ListItem>No help from react</ListItem>
           </List>
         </Slide>
         {/* render props */}

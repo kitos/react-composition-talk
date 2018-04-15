@@ -1,6 +1,5 @@
 import React from 'react'
 import createReactClass from 'create-react-class'
-import styled from 'styled-components'
 import { Box, Flex } from 'grid-styled'
 
 import {
@@ -22,11 +21,6 @@ import createTheme from 'spectacle/lib/themes/default'
 
 import Start from './1.start'
 import AboutMe from './about-me'
-
-import nikitos from '../assets/nikitos.jpg'
-import twitter from '../assets/twitter.svg'
-import github from '../assets/github.svg'
-import webpurple from '../assets/webpurple.svg'
 
 require('normalize.css')
 
@@ -80,10 +74,13 @@ export default class Presentation extends React.Component {
               <ListItem>What is composition?</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Patterns in react</ListItem>
+              <ListItem>mixins</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Style composition</ListItem>
+              <ListItem>HOC</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>render props</ListItem>
             </Appear>
           </List>
         </Slide>
@@ -277,24 +274,6 @@ export default class Presentation extends React.Component {
               <ListItem>Dynamic composition!</ListItem>
             </Appear>
           </List>
-        </Slide>
-        {/* Style composition */}
-        <Slide>
-          <Heading size={3}>Style composition</Heading>
-          <ComponentPlayground
-            theme={codeTheme}
-            lang="jsx"
-            scope={{
-              styled,
-              Flex,
-              Box,
-              nikitos,
-              twitter,
-              github,
-              webpurple,
-            }}
-            code={require('raw-loader!./styles.1.example')}
-          />
         </Slide>
         {/* further reading */}
         <Slide>

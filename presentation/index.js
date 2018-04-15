@@ -1,26 +1,29 @@
 import React from 'react'
 import createReactClass from 'create-react-class'
-import { Box, Flex } from 'grid-styled'
+import {Box, Flex} from 'grid-styled'
 
 import {
-  Appear,
-  BlockQuote,
-  Cite,
-  CodePane,
-  ComponentPlayground,
-  Deck,
-  Heading,
-  Link,
-  List,
-  ListItem,
-  Quote,
-  Slide,
+    Appear,
+    BlockQuote,
+    Cite,
+    CodePane,
+    ComponentPlayground,
+    Deck,
+    Heading,
+    Image,
+    Link,
+    List,
+    ListItem,
+    Quote,
+    Slide,
 } from 'spectacle'
 
 import createTheme from 'spectacle/lib/themes/default'
 
 import Start from './1.start'
 import AboutMe from './about-me'
+
+import mixinError from '../assets/mixin-error.jpg'
 
 require('normalize.css')
 
@@ -36,14 +39,6 @@ const theme = createTheme(
     secondary: 'Helvetica',
   },
 )
-
-const wrapperStyle = (window.wrapperStyle = {
-  minHeight: 'calc(60vh - 10px)',
-  border: '1px dashed green',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-})
 
 const codeTheme = 'light'
 
@@ -141,9 +136,19 @@ export default class Presentation extends React.Component {
           <Heading size={3}>Mixins</Heading>
           <ComponentPlayground
             theme={codeTheme}
-            scope={{ wrapperStyle, createReactClass }}
+            scope={{ Box, createReactClass }}
             code={require('raw-loader!./mixins.1.example')}
           />
+        </Slide>
+        <Slide>
+          <Heading size={3}>Mixins 😔</Heading>
+          <CodePane
+            textSize="26px"
+            source={require('raw-loader!./mixins.2.example')}
+            theme={codeTheme}
+            lang="jsx"
+          />
+          <Image src={mixinError} />
         </Slide>
         <Slide>
           <Heading size={3}>Mixins cons</Heading>

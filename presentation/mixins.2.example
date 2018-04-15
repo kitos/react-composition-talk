@@ -1,0 +1,7 @@
+const App = createReactClass({
+  mixins: [ CounterMixin, CounterMixin ], ⁉️
+
+  render() {
+    ...
+  }
+})

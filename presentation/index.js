@@ -51,7 +51,7 @@ const wrapperStyle = (window.wrapperStyle = {
   justifyContent: 'center',
 })
 
-const codeTheme = 'dark'
+const codeTheme = 'light'
 
 export default class Presentation extends React.Component {
   render() {
@@ -136,7 +136,7 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* Mixins */}
         <Slide>
-          <Heading size={6}>Mixins</Heading>
+          <Heading size={3}>Mixins</Heading>
           <ComponentPlayground
             theme={codeTheme}
             scope={{ wrapperStyle, createReactClass }}
@@ -154,7 +154,7 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* HOC */}
         <Slide>
-          <Heading size={6}>Higher-Order Components (HOC)</Heading>
+          <Heading size={3}>Higher-Order Components (HOC)</Heading>
           <ComponentPlayground
             theme={codeTheme}
             code={require('raw-loader!./hoc.1.example')}
@@ -162,34 +162,49 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* Recompose */}
         <Slide>
-          <Heading size={6}>
+          <Heading size={3}>
             <Link href="https://github.com/acdlite/recompose">Recompose.</Link>{' '}
             Basic
           </Heading>
           <CodePane
+            textSize="26px"
             source={require('raw-loader!./recompose.1.example')}
             theme={codeTheme}
             lang="jsx"
           />
         </Slide>
         <Slide>
-          <Heading size={6}>Recompose. Relay</Heading>
-          <CodePane
-            source={require('raw-loader!./recompose.2.example')}
-            theme={codeTheme}
-            lang="jsx"
-          />
+          <Heading size={3}>Recompose. Relay</Heading>
+          <Flex alignContent="center">
+            <Box flex={3}>
+              <CodePane
+                textSize="24px"
+                source={require('raw-loader!./recompose.2.1.example')}
+                theme={codeTheme}
+                lang="jsx"
+              />
+            </Box>
+            <Box flex={4}>
+              <CodePane
+                textSize="24px"
+                source={require('raw-loader!./recompose.2.2.example')}
+                theme={codeTheme}
+                lang="jsx"
+              />
+            </Box>
+          </Flex>
         </Slide>
         <Slide>
-          <Heading size={6}>Recompose. We need more examples</Heading>
+          <Heading size={3}>Recompose. We need more examples</Heading>
           <CodePane
+            textSize="24px"
             source={require('raw-loader!./recompose.3.example')}
             theme={codeTheme}
             lang="jsx"
           />
         </Slide>
         <Slide>
-          <Heading size={6}>So...</Heading>
+          <Heading size={3}>So...</Heading>
           <List>
             <ListItem>Indirection</ListItem>
             <ListItem>Naming collisions</ListItem>
@@ -198,7 +213,7 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* render props */}
         <Slide>
-          <Heading size={6}>render props</Heading>
+          <Heading size={3}>render props</Heading>
           <ComponentPlayground
             theme={codeTheme}
             lang="jsx"
@@ -206,15 +221,16 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide>
-          <Heading size={6}>render props</Heading>
+          <Heading size={3}>render props</Heading>
           <ComponentPlayground
             theme={codeTheme}
             code={require('raw-loader!./render-props.3.example')}
           />
         </Slide>
         <Slide>
-          <Heading size={6}>render props. apollo</Heading>
+          <Heading size={3}>render props. apollo</Heading>
           <CodePane
+            textSize="24px"
             theme={codeTheme}
             lang="jsx"
             source={require('raw-loader!./render-props.4.example')}
@@ -240,15 +256,16 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading size={6}>render props. context</Heading>
+          <Heading size={3}>render props. context</Heading>
           <CodePane
+            textSize="24px"
             theme={codeTheme}
             lang="jsx"
             source={require('raw-loader!./render-props.2.example')}
           />
         </Slide>
         <Slide>
-          <Heading size={6}>render props</Heading>
+          <Heading size={3}>render props</Heading>
           <List>
             <Appear>
               <ListItem>Clear flow!</ListItem>
@@ -263,7 +280,7 @@ export default class Presentation extends React.Component {
         </Slide>
         {/* Style composition */}
         <Slide>
-          <Heading size={6}>Style composition</Heading>
+          <Heading size={3}>Style composition</Heading>
           <ComponentPlayground
             theme={codeTheme}
             lang="jsx"

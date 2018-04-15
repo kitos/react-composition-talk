@@ -6,6 +6,7 @@ import nikitos from '../assets/nikitos.jpg'
 import twitter from '../assets/twitter.svg'
 import github from '../assets/github.svg'
 import webpurple from '../assets/webpurple.svg'
+import { Heading } from 'spectacle'
 
 const Avatar = styled.img`
   width: 160px;
@@ -15,7 +16,7 @@ const Avatar = styled.img`
 `
 
 const Info = styled.div`
-  font-size: 16px;
+  font-size: 24px;
 `
 
 const I = styled.img`
@@ -35,13 +36,17 @@ const ContactList = styled.ul`
 
 export default () => (
   <React.Fragment>
-    <h2>About me</h2>
+    <Box mb="50px">
+      <Heading size={3}>About me</Heading>
+    </Box>
     <Flex justifyContent="center">
       <Flex flexDirection="column" alignItems="center">
         <Box mb="20px">
           <Avatar src={nikitos} />
         </Box>
-        <Box mb="10px">Nikita Kirsanov</Box>
+        <Box mb="10px" fontSize="32px">
+          Nikita Kirsanov
+        </Box>
         <Info>Senior Software Engineer</Info>
         <Info>EPAM Systems (Ryazan)</Info>
       </Flex>

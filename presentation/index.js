@@ -90,7 +90,7 @@ export default class Presentation extends React.Component {
       <Deck
         contentHeight={900}
         contentWidth={1366}
-        transition={['zoom', 'slide']}
+        transition={['zoom', 'spin']}
         transitionDuration={500}
         progress="number"
         theme={theme}>

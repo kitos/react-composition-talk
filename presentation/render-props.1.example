@@ -1,32 +1,29 @@
-class Mouse extends React.Component {
-  mm(e) {
-    this.setState({
-      x: e.clientX,
-      y: e.clientY,
-    })
+class Counter extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { value: 0 }
+  }
+
+  inc(event) {
+    this.setState(
+      ({ value: prev }) => ({ value: prev + 1 })
+    )
   }
 
   render() {
-    const mm = this.mm.bind(this)
-    const rp = this.props.children
-
-    return (
-      <div
-        style={window.wrapperStyle}
-        onMouseMove={mm}>
-        {rp(this.state || {})}
-      </div>
+    return this.props.children(
+      this.state.value, this.inc.bind(this)
     )
   }
 }
 
-/* no collisions */
 render(
-  <Mouse>
-    {({ x, y }) => (
-      <div>
-        x: {x}, y: {y}
-      </div>
+  <Counter>
+    {(value, inc) => (
+      <Box m="80px">
+        <input value={value} />
+        <button onClick={inc}>+</button>
+      </Box>
     )}
-  </Mouse>
+  </Counter>
 )

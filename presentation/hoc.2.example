@@ -1,6 +1,6 @@
 const Counter = compose(
-  withCounter,
-  withCounter
+  withCounter(0),
+  withCounter(5)
 )(({ value, inc }) => (
     <Box m="80px">
       <input value={value} />

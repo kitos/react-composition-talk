@@ -1,4 +1,4 @@
-mport { Query } from 'react-apollo';
+import { Query } from 'react-apollo'
 
 function MyComponent() {
   return (

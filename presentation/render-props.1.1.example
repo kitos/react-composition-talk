@@ -1,0 +1,23 @@
+render(
+  <Counter>
+    {(value1, inc1) => (
+      <Counter>
+        {(value2, inc2) => (
+          <React.Fragment>
+            <Box m="80px">
+              value1:
+              <input value={value1} />
+              <button onClick={inc1}>+</button>
+            </Box>
+
+            <Box m="80px">
+              value2:
+              <input value={value2} />
+              <button onClick={inc2}>+</button>
+            </Box>
+          </React.Fragment>
+         )}
+      </Counter>
+    )}
+  </Counter>
+)

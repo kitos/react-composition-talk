@@ -1,36 +1,23 @@
-class Media extends React.Component {
-  detect() {
-    this.setState({
-      device: window.innerWidth < 640
-        ? 'mobile'
-        : 'desktop'
-    })
-  }
+const ThemeContext = React.createContext('light')
 
-  componentDidMount() {
-    this.detect()
-    window.addEventListener('resize',
-      () => this.detect())
-  }
-
+class ThemeProvider extends React.Component {
+  state = {theme: 'light'}
   render() {
-    return this.props.children(
-      this.state && this.state.device
+    return (
+      <ThemeContext.Provider value={this.state.theme}>
+        {this.props.children}
+      </ThemeContext.Provider>
     )
   }
 }
-
-const styles = {
-  mobile: { fontSize: '40px', color: 'red' },
-  desktop: { fontSize: '20px', color: 'green'}
+class App extends React.Component {
+  render() {
+    return (
+      <ThemeProvider>
+        <ThemeContext.Consumer>
+          {val => <div>{val}</div>}
+        </ThemeContext.Consumer>
+      </ThemeProvider>
+    )
+  }
 }
-
-render(
-  <Media>
-    {device => (
-      <div style={styles[device]}>
-        this is {device}
-      </div>
-    )}
-  </Media>
-)

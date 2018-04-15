@@ -43,11 +43,11 @@ const theme = createTheme(
 
 const codeTheme = 'light'
 
-const withCounter = Component => {
+const withCounter = initialState => Component => {
   return class extends React.Component {
     constructor(props) {
       super(props)
-      this.state = { value: 0 }
+      this.state = { value: initialState }
     }
 
     inc(event) {
@@ -63,6 +63,21 @@ const withCounter = Component => {
         />
       )
     }
+  }
+}
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { value: 0 }
+  }
+
+  inc(event) {
+    this.setState(({ value: prev }) => ({ value: prev + 1 }))
+  }
+
+  render() {
+    return this.props.children(this.state.value, this.inc.bind(this))
   }
 }
 
@@ -190,7 +205,7 @@ export default class Presentation extends React.Component {
           <Heading size={3}>Higher-Order Components (HOC) 🤔</Heading>
           <ComponentPlayground
             theme={codeTheme}
-            scope={{ Box, compose, withCounter }}
+            scope={{ Box, compose }}
             code={require('raw-loader!./hoc.1.example')}
           />
         </Slide>
@@ -260,24 +275,31 @@ export default class Presentation extends React.Component {
             <ListItem>No help from react</ListItem>
           </List>
         </Slide>
+
         {/* render props */}
+
         <Slide>
-          <Heading size={3}>render props</Heading>
+          <Heading size={3}>render props 🤨</Heading>
           <ComponentPlayground
             theme={codeTheme}
+            scope={{ Box }}
             lang="jsx"
             code={require('raw-loader!./render-props.1.example')}
           />
         </Slide>
+
         <Slide>
-          <Heading size={3}>render props</Heading>
+          <Heading size={3}>render props 🤤</Heading>
           <ComponentPlayground
             theme={codeTheme}
-            code={require('raw-loader!./render-props.3.example')}
+            scope={{ Box, Counter }}
+            lang="jsx"
+            code={require('raw-loader!./render-props.1.1.example')}
           />
         </Slide>
+
         <Slide>
-          <Heading size={3}>render props. apollo</Heading>
+          <Heading size={3}>render props. apollo 😌</Heading>
           <CodePane
             textSize="24px"
             theme={codeTheme}
@@ -295,7 +317,7 @@ export default class Presentation extends React.Component {
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://github.com/paypal/downshift">downshift</Link>
+              <Link href="https://github.com/paypal/downshift">downshift 🏎️</Link>
             </ListItem>
             <ListItem>
               <Link href="https://medium.com/dailyjs/reacts-%EF%B8%8F-new-context-api-70c9fe01596b">
@@ -305,25 +327,25 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Heading size={3}>render props. context</Heading>
+          <Heading size={3}>render props. context 🤪</Heading>
           <CodePane
-            textSize="24px"
+            textSize="20px"
             theme={codeTheme}
             lang="jsx"
-            source={require('raw-loader!./render-props.2.example')}
+            source={require('raw-loader!./render-props.3.example')}
           />
         </Slide>
         <Slide>
           <Heading size={3}>render props</Heading>
           <List>
             <Appear>
-              <ListItem>Clear flow!</ListItem>
+              <ListItem>Clear flow! 🙈</ListItem>
             </Appear>
             <Appear>
-              <ListItem>No naming collisions!</ListItem>
+              <ListItem>No naming collisions! 🙉</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Dynamic composition!</ListItem>
+              <ListItem>Dynamic composition! 🙊</ListItem>
             </Appear>
           </List>
         </Slide>

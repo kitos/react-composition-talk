@@ -1,8 +1,8 @@
-const withCounter = Component => {
+const withCounter = initialState => Component => {
   return class extends React.Component {
     constructor(props) {
        super(props)
-       this.state = { value: 0 }
+       this.state = { value: initialState }
     }
 
     inc(event) {
@@ -13,8 +13,7 @@ const withCounter = Component => {
 
     render() {
       return (
-        <Component
-          {...this.props}
+        <Component {...this.props}
           value={this.state.value}
           inc={this.inc.bind(this)}/>
       )
@@ -22,7 +21,7 @@ const withCounter = Component => {
   }
 }
 
-const Counter = withCounter(
+const Counter = withCounter(5)(
   ({ value, inc }) => (
     <Box m="80px">
       <input value={value} />

@@ -100,8 +100,13 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={3}>Why?</Heading>
           <List>
-            <ListItem>write less code</ListItem>
-            <ListItem>...</ListItem>
+            {['write less code', 'declarative', 'testable', '...'].map(
+              point => (
+                <Appear>
+                  <ListItem>{point}</ListItem>
+                </Appear>
+              ),
+            )}
           </List>
         </Slide>
         <Slide bgColor="secondary" textColor="primary">

@@ -1,24 +1,21 @@
 import React from 'react'
 import createReactClass from 'create-react-class'
 import styled from 'styled-components'
-import { Flex, Box } from 'grid-styled'
+import { Box, Flex } from 'grid-styled'
 
 import {
+  Appear,
   BlockQuote,
   Cite,
-  Deck,
-  Heading,
-  ListItem,
-  List,
-  Quote,
-  Slide,
-  Text,
-  Image,
-  Layout,
-  Link,
-  Appear,
   CodePane,
   ComponentPlayground,
+  Deck,
+  Heading,
+  Link,
+  List,
+  ListItem,
+  Quote,
+  Slide,
 } from 'spectacle'
 
 import createTheme from 'spectacle/lib/themes/default'
@@ -38,7 +35,7 @@ const theme = createTheme(
     primary: 'white',
     secondary: '#1F2022',
     tertiary: '#03A9FC',
-    quarternary: '#CECECE',
+    quarternary: '#03A9FC',
   },
   {
     primary: 'Montserrat',
@@ -60,8 +57,11 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck
+        contentHeight={900}
+        contentWidth={1366}
         transition={['zoom', 'slide']}
         transitionDuration={500}
+        progress="number"
         theme={theme}>
         <Slide bgColor="#97cad4">
           <Start />

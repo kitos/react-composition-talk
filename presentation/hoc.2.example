@@ -1,0 +1,12 @@
+const Counter = compose(
+  withCounter,
+  withCounter
+)(({ value, inc }) => (
+    <Box m="80px">
+      <input value={value} />
+      <button onClick={inc}>+</button>
+    </Box>
+  )
+)
+
+render(<Counter />)

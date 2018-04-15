@@ -5,9 +5,9 @@ const CounterMixin = {
 
   inc() {
     this.setState(
-        ({ value: prev }) => ({
-            value: prev + 1
-        })
+      ({ value: prev }) => ({
+        value: prev + 1
+      })
     )
   }
 }

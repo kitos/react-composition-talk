@@ -25,6 +25,7 @@
     "normalize.css": "7.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "recompose": "^0.26.0",
     "spectacle": "^4.0.0",
     "spectacle-renderer": "^0.0.3",
     "styled-components": "^3.2.3"

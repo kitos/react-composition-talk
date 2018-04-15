@@ -1,21 +1,22 @@
 import React from 'react'
 import createReactClass from 'create-react-class'
-import {Box, Flex} from 'grid-styled'
+import { Box, Flex } from 'grid-styled'
+import { compose } from 'recompose'
 
 import {
-    Appear,
-    BlockQuote,
-    Cite,
-    CodePane,
-    ComponentPlayground,
-    Deck,
-    Heading,
-    Image,
-    Link,
-    List,
-    ListItem,
-    Quote,
-    Slide,
+  Appear,
+  BlockQuote,
+  Cite,
+  CodePane,
+  ComponentPlayground,
+  Deck,
+  Heading,
+  Image,
+  Link,
+  List,
+  ListItem,
+  Quote,
+  Slide,
 } from 'spectacle'
 
 import createTheme from 'spectacle/lib/themes/default'
@@ -41,6 +42,29 @@ const theme = createTheme(
 )
 
 const codeTheme = 'light'
+
+const withCounter = Component => {
+  return class extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = { value: 0 }
+    }
+
+    inc(event) {
+      this.setState(({ value: prev }) => ({ value: prev + 1 }))
+    }
+
+    render() {
+      return (
+        <Component
+          {...this.props}
+          value={this.state.value}
+          inc={this.inc.bind(this)}
+        />
+      )
+    }
+  }
+}
 
 export default class Presentation extends React.Component {
   render() {
@@ -159,15 +183,29 @@ export default class Presentation extends React.Component {
             <ListItem>Static composition</ListItem>
           </List>
         </Slide>
+
         {/* HOC */}
+
         <Slide>
           <Heading size={3}>Higher-Order Components (HOC)</Heading>
           <ComponentPlayground
             theme={codeTheme}
+            scope={{ Box, compose, withCounter }}
             code={require('raw-loader!./hoc.1.example')}
           />
         </Slide>
+
+        <Slide>
+          <Heading size={3}>HOC 😫</Heading>
+          <ComponentPlayground
+            theme={codeTheme}
+            scope={{ Box, compose, withCounter }}
+            code={require('raw-loader!./hoc.2.example')}
+          />
+        </Slide>
+
         {/* Recompose */}
+
         <Slide>
           <Heading size={3}>
             <Link href="https://github.com/acdlite/recompose">Recompose.</Link>{' '}

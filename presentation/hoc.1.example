@@ -1,26 +1,34 @@
-const withMouse = Component => {
+const withCounter = Component => {
   return class extends React.Component {
-    mm(event) {
-      this.setState({
-        x: event.clientX,
-        y: event.clientY,
-      })
+    constructor(props) {
+       super(props)
+       this.state = { value: 0 }
+    }
+
+    inc(event) {
+      this.setState(
+        ({ value: prev }) => ({ value: prev + 1 })
+      )
     }
 
     render() {
       return (
-        <div
-          style={window.wrapperStyle}
-          onMouseMove={this.mm.bind(this)}>
-          <Component {...this.props} {...this.state} />
-        </div>
+        <Component
+          {...this.props}
+          value={this.state.value}
+          inc={this.inc.bind(this)}/>
       )
     }
   }
 }
 
-const ShowCoords = withMouse(
-  ({ x, y }) => <div>x: {x}, y: {y}</div>
+const Counter = withCounter(
+  ({ value, inc }) => (
+    <Box m="80px">
+      <input value={value} />
+      <button onClick={inc}>+</button>
+    </Box>
+  )
 )
 
-render(<ShowCoords />)
+render(<Counter />)

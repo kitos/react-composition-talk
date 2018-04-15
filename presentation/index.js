@@ -157,16 +157,16 @@ export default class Presentation extends React.Component {
           <Heading size={2}>Patterns/approaches in react</Heading>
           <List>
             <Appear>
-              <ListItem>Smart/Dumb components</ListItem>
+              <ListItem>Smart 🧐 / Dumb 🤪 components</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Mixins</ListItem>
+              <ListItem>Mixins 👫</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Higher-Order Components (HOC)</ListItem>
+              <ListItem>Higher-Order Components (HOC) 🙆‍</ListItem>
             </Appear>
             <Appear>
-              <ListItem>render props</ListItem>
+              <ListItem>render props 🤷‍</ListItem>
             </Appear>
           </List>
         </Slide>

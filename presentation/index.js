@@ -25,6 +25,9 @@ import Start from './1.start'
 import AboutMe from './about-me'
 
 import mixinError from '../assets/mixin-error.jpg'
+import michaelJackson from '../assets/michael-jackson.jpg'
+import trueMichaelJackson from '../assets/true-michael-jackson.jpg'
+import ryanflorence from '../assets/ryanflorence.jpg'
 
 require('normalize.css')
 
@@ -307,6 +310,23 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!./render-props.4.example')}
           />
         </Slide>
+
+        <Slide>
+          <Heading size={3}>render props evangelist</Heading>
+          <Image src={michaelJackson} />
+        </Slide>
+
+        <Slide>
+          <Heading size={3}>
+            <a href="https://twitter.com/mjackson">@mjackson</a> and{' '}
+            <a href="https://twitter.com/ryanflorence">@ryanflorence</a>
+          </Heading>
+          <Flex mt="100px">
+            <Image src={trueMichaelJackson} height="300px" />
+            <Image src={ryanflorence} height="300px" />
+          </Flex>
+        </Slide>
+
         {/* Who is using render props? */}
         <Slide>
           <Heading size={3}>Who else is using render props?</Heading>
@@ -317,7 +337,9 @@ export default class Presentation extends React.Component {
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://github.com/paypal/downshift">downshift 🏎️</Link>
+              <Link href="https://github.com/paypal/downshift">
+                downshift 🏎️
+              </Link>
             </ListItem>
             <ListItem>
               <Link href="https://medium.com/dailyjs/reacts-%EF%B8%8F-new-context-api-70c9fe01596b">
